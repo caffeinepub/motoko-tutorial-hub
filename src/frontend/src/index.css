@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.085 0.012 248;
+    --foreground: 0.965 0.005 220;
+    --card: 0.11 0.018 228;
+    --card-foreground: 0.965 0.005 220;
+    --popover: 0.13 0.018 228;
+    --popover-foreground: 0.965 0.005 220;
+    --primary: 0.73 0.11 195;
+    --primary-foreground: 0.085 0.012 248;
+    --secondary: 0.19 0.028 226;
+    --secondary-foreground: 0.965 0.005 220;
+    --muted: 0.15 0.018 228;
+    --muted-foreground: 0.77 0.014 218;
+    --accent: 0.77 0.16 157;
+    --accent-foreground: 0.085 0.012 248;
+    --destructive: 0.55 0.19 27;
+    --destructive-foreground: 0.965 0.005 220;
+    --border: 0.21 0.018 224;
+    --input: 0.19 0.028 226;
+    --ring: 0.73 0.11 195;
+    --chart-1: 0.73 0.11 195;
+    --chart-2: 0.77 0.16 157;
+    --chart-3: 0.76 0.14 65;
+    --chart-4: 0.72 0.14 295;
+    --chart-5: 0.55 0.19 27;
+    --sidebar: 0.11 0.018 228;
+    --sidebar-foreground: 0.965 0.005 220;
+    --sidebar-primary: 0.73 0.11 195;
+    --sidebar-primary-foreground: 0.085 0.012 248;
+    --sidebar-accent: 0.15 0.018 228;
+    --sidebar-accent-foreground: 0.965 0.005 220;
+    --sidebar-border: 0.21 0.018 224;
+    --sidebar-ring: 0.73 0.11 195;
+
+    /* Brand-specific tokens */
+    --teal: 0.73 0.11 195;
+    --green: 0.77 0.16 157;
+    --amber: 0.76 0.14 65;
+    --surface: 0.125 0.02 228;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .glow-teal {
+    box-shadow: 0 0 20px oklch(0.73 0.11 195 / 0.18), 0 0 40px
+      oklch(0.73 0.11 195 / 0.08);
+  }
+  .glow-green {
+    box-shadow: 0 0 20px oklch(0.77 0.16 157 / 0.18), 0 0 40px
+      oklch(0.77 0.16 157 / 0.08);
+  }
+  .card-surface {
+    background: oklch(0.11 0.018 228);
+    border: 1px solid oklch(0.21 0.018 224);
+    border-radius: 0.875rem;
+  }
+  .text-teal {
+    color: oklch(var(--teal));
+  }
+  .text-green {
+    color: oklch(var(--green));
+  }
+  .text-amber-brand {
+    color: oklch(var(--amber));
+  }
+  .bg-teal {
+    background-color: oklch(var(--teal));
+  }
+  .border-teal {
+    border-color: oklch(var(--teal));
+  }
+}
